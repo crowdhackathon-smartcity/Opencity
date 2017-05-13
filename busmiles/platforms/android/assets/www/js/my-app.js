@@ -52,7 +52,7 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
     $$('.chip-delete').on('click', function (e) {
         e.preventDefault();
         var chip = $$(this).parents('.chip');
-            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234', function () {
+            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
             chip.remove();
         });
     });
@@ -60,7 +60,7 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
     $$('.chip-delete1').on('click', function (e) {
         e.preventDefault();
         var chip = $$(this).parents('.chip');
-            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234', function () {
+            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
             chip.remove();
         });
     });
