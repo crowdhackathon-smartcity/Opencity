@@ -25,6 +25,12 @@ myApp.onPageInit('about', function (page) {
 
 })
 
+function exitFromApp()
+        {
+            console.log("in button");
+            navigator.app.exitApp();
+}
+
 // Option 2. Using one 'pageInit' event handler for all pages:
 $$(document).on('pageInit', function (e) {
     // Get page data from event data
@@ -32,12 +38,37 @@ $$(document).on('pageInit', function (e) {
 
     if (page.name === 'about') {
         // Following code will be executed for page with data-page attribute equal to "about"
-        myApp.alert('Here comes About page');
+        //myApp.alert('Here comes About page');
     }
 })
 
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    myApp.alert('Here comes About page');
+    //myApp.alert('Here comes About page');
+})
+
+$$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
+    $$('.chip-delete').on('click', function (e) {
+        e.preventDefault();
+        var chip = $$(this).parents('.chip');
+            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234', function () {
+            chip.remove();
+        });
+    });
+
+    $$('.chip-delete1').on('click', function (e) {
+        e.preventDefault();
+        var chip = $$(this).parents('.chip');
+            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234', function () {
+            chip.remove();
+        });
+    });
+})
+
+
+
+
+$$(document).on('pageInit', '.page[data-page="exit"]', function (e) {
+    navigator.app.exitApp();
 })

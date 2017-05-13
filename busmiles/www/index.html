@@ -42,7 +42,21 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
         <div class="content-block">
-            <p>Left panel content goes here</p>
+            <p>
+                <a href="index.html" class="close-panel">Home</a>
+            </p>
+            <p>
+                <a href="profile.html" class="close-panel">Profile</a>
+            </p>
+             <p>
+                <a href="routes.html" class="close-panel">My Routes</a>
+            </p>
+            <p>
+                <a href="about.html" class="close-panel">About</a>
+            </p>
+            <p>
+                <a href="exit.html" class="close-panel">Exit</a>
+            </p>
         </div>
     </div>
 
@@ -54,14 +68,14 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">buSmiles</div>
-                    <div class="right">
+                    <div class="left">
                         <!--
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
                         <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
+                    <div class="center sliding">buSmiles</div>
                 </div>
             </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -71,9 +85,8 @@
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+                            <p><a href="#" class="button button-big button-fill color-green button-round">Start Route</a></p>    
+                            <p><a href="#" class="button button-big button-fill color-red button-round disabled">Stop Route</a></p>                   
                         </div>
                     </div>
                 </div>
@@ -81,9 +94,9 @@
             <!-- Bottom Toolbar-->
             <div class="toolbar">
                 <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
+                    <a href="index.html" class="link">Home</a>
+                    <a href="profile.html" class="link">Profile</a>
+                    <a href="routes.html" class="link">Routes</a>
                 </div>
             </div>
         </div>
