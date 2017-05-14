@@ -78,7 +78,6 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
         e.preventDefault();
         var chip = $$(this).parents('.chip');
             myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
-            chip.remove();
         });
     });
 
@@ -86,7 +85,6 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
         e.preventDefault();
         var chip = $$(this).parents('.chip');
             myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
-            chip.remove();
         });
     });
 })
