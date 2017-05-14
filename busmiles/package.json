@@ -12,7 +12,7 @@
         "cordova-plugin-console": "~1.0.1",
         "cordova-plugin-geolocation": "^2.4.3",
         "cordova-plugin-statusbar": "~1.0.1",
-        "cordova-plugin-whitelist": "~1.2.0"
+        "cordova-plugin-whitelist": "git+https://github.com/apache/cordova-plugin-whitelist.git"
     },
     "cordova": {
         "plugins": {

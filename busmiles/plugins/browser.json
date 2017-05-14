@@ -15,6 +15,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.opencity.busmiles"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.opencity.busmiles"
         }
     },
     "dependent_plugins": {
