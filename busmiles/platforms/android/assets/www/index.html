@@ -85,8 +85,25 @@
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
-                            <p><a href="#" class="button button-big button-fill color-green button-round">Start Route</a></p>    
-                            <p><a href="#" class="button button-big button-fill color-red button-round disabled">Stop Route</a></p>                   
+                            <p><a id="index-button-start" style="height:80px;" href="#" class="button-start button button-big button-fill color-green button-round">Start Route</a></p>    
+                            <p><a id="index-button-stop" href="#" style="height:80px;" class="button-stop button button-big button-fill color-red button-round disabled">Stop Route</a></p>
+                            <div class="card">
+                                <div class="card-header">Route statistics</div>
+                                <div class="card-content">
+                                    <div class="card-content-inner">
+                                        Distance: 
+                                        <span id="index-route-kms">0</span> kilometers
+                                    </div>
+                                    <div class="card-content-inner">
+                                        Time: 
+                                        <span id="index-route-min">0</span> minutes
+                                    </div>
+                                    <div class="card-content-inner">
+                                        CO2 Saved: 
+                                        <span id="index-route-min">0</span> litres
+                                    </div>
+                                </div>
+                            </div>                   
                         </div>
                     </div>
                 </div>

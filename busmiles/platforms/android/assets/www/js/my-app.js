@@ -14,6 +14,16 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+    $$('#index-button-start').on('click', function (e) {
+        $$('#index-button-stop').removeClass("disabled");
+        $$('#index-button-start').addClass("disabled");
+        navigator.geolocation.getCurrentPosition(onSuccessStart, onError);
+    });
+    $$('#index-button-stop').on('click', function (e) {
+        $$('#index-button-stop').addClass("disabled");
+        $$('#index-button-start').removeClass("disabled");
+        navigator.geolocation.getCurrentPosition(onSuccessStop, onError);
+    });
 });
 
 
@@ -82,8 +92,57 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 
 
+$$(document).on('pageInit', '.page[data-page="index"]', function (e) {
+    $$('#index-button-start').on('click', function (e) {
+        $$('#index-button-stop').removeClass("disabled");
+        $$('#index-button-start').addClass("disabled");
+        navigator.geolocation.getCurrentPosition(onSuccessStart, onError);
+    });
+    $$('#index-button-stop').on('click', function (e) {
+        $$('#index-button-stop').addClass("disabled");
+        $$('#index-button-start').removeClass("disabled");
+        navigator.geolocation.getCurrentPosition(onSuccessStop, onError);
+    });
+})
 
 
 $$(document).on('pageInit', '.page[data-page="exit"]', function (e) {
     navigator.app.exitApp();
 })
+
+/*GPS Functions*/
+
+// onSuccess Callback
+// This method accepts a Position object, which contains the
+// current GPS coordinates
+//
+var onSuccessStart = function(position) {
+    myApp.alert('Route started: '                                         + '<br>' +
+          'Latitude: '          + position.coords.latitude          + '<br>' +
+          'Longitude: '         + position.coords.longitude         + '<br>' +
+          //'Altitude: '          + position.coords.altitude          + '\n' +
+          //'Accuracy: '          + position.coords.accuracy          + '\n' +
+          //'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          //'Heading: '           + position.coords.heading           + '\n' +
+          //'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '<br>',"buSmiles");
+};
+
+var onSuccessStop = function(position) {
+    myApp.alert('Route stopped: '                                         + '<br>' +
+          'Latitude: '          + position.coords.latitude          + '<br>' +
+          'Longitude: '         + position.coords.longitude         + '<br>' +
+          //'Altitude: '          + position.coords.altitude          + '\n' +
+          //'Accuracy: '          + position.coords.accuracy          + '\n' +
+          //'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          //'Heading: '           + position.coords.heading           + '\n' +
+          //'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '<br>',"buSmiles");
+};
+
+// onError Callback receives a PositionError object
+//
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
