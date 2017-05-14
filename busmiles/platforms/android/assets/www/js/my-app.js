@@ -18,6 +18,7 @@ $$(document).on('deviceready', function() {
         $$('#index-button-stop').removeClass("disabled");
         $$('#index-button-start').addClass("disabled");
         navigator.geolocation.getCurrentPosition(onSuccessStart, onError);
+        getOASARoute();
     });
     $$('#index-button-stop').on('click', function (e) {
         $$('#index-button-stop').addClass("disabled");
@@ -171,9 +172,9 @@ var distanceCovered = calculateItenary(startingPointItenary, endingPointItenary,
 console.log(distanceCovered);
 console.log(calculateCarbonEmission(distanceCovered),"kg CO2 saved");
 
-
+var xhr;
 function getOASARoute(){
-  var xhr = new XMLHttpRequest();
+  xhr = new XMLHttpRequest();
   xhr.open('GET', "http://telematics.oasa.gr/api/?act=webRouteDetails&p1="+busline);
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
   xhr.setRequestHeader('Content-type', 'application/ecmascript');
@@ -186,12 +187,13 @@ function getOASARoute(){
 
 function processRequest(e) {
   if (xhr.readyState == 4 && xhr.status == 200) {
-      responseText = response;
+      responseText = xhr.response;
+      console.log(responseText);
     }
 }
 
 function getOASABusStops(){
-  var xhr = new XMLHttpRequest();
+  xhr = new XMLHttpRequest();
   xhr.open('GET', "http://telematics.oasa.gr/api/?act=webGetStops&p1="+busline);
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
   xhr.setRequestHeader('Content-type', 'application/ecmascript');

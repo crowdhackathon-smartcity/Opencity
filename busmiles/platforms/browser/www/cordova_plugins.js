@@ -15,7 +15,8 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.7",
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-compat": "1.1.0",
-    "cordova-plugin-geolocation": "2.4.3"
+    "cordova-plugin-geolocation": "2.4.3",
+    "cordova-plugin-whitelist": "1.3.3-dev"
 }
 // BOTTOM OF METADATA
 });
