@@ -119,24 +119,19 @@ var onSuccessStart = function(position) {
     myApp.alert('Route started: '                                         + '<br>' +
           'Latitude: '          + position.coords.latitude          + '<br>' +
           'Longitude: '         + position.coords.longitude         + '<br>' +
-          //'Altitude: '          + position.coords.altitude          + '\n' +
-          //'Accuracy: '          + position.coords.accuracy          + '\n' +
-          //'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          //'Heading: '           + position.coords.heading           + '\n' +
-          //'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '<br>',"buSmiles");
+          'Stop: '         + 'ΣΧΟΛΗ ΚΑΛΩΝ ΤΕΧΝΩΝ'        + '<br>' +
+          'Timestamp: '         + new Date(position.timestamp)                + '<br>',"buSmiles");
 };
 
 var onSuccessStop = function(position) {
     myApp.alert('Route stopped: '                                         + '<br>' +
           'Latitude: '          + position.coords.latitude          + '<br>' +
           'Longitude: '         + position.coords.longitude         + '<br>' +
-          //'Altitude: '          + position.coords.altitude          + '\n' +
-          //'Accuracy: '          + position.coords.accuracy          + '\n' +
-          //'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          //'Heading: '           + position.coords.heading           + '\n' +
-          //'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '<br>',"buSmiles");
+          'Distance covered: '         + '27.327 kilometers'         + '<br>' +
+          'Stop: '         + 'ΣΧΟΛΗ ΚΑΛΩΝ ΤΕΧΝΩΝ'        + '<br>' +
+          'Timestamp: '         + new Date(position.timestamp)                + '<br>',"buSmiles");
+    var $$ = Dom7;
+    $$('#index-route-min').innerHTML="2";
 };
 
 // onError Callback receives a PositionError object
@@ -205,6 +200,24 @@ function getOASABusStops(){
 }
 
 function processRequest2(e) {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+      responseBusStops = response;
+    }
+}
+
+function getNearestStop(latitude,longitude){
+  xhr = new XMLHttpRequest();
+  xhr.open('GET', "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&sensor=true&key=AIzaSyB0PdPNKF_6NmJmxReglUvdHaajXweZPe8&rankby=distance&types=bus_station");
+  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+  xhr.setRequestHeader('Content-type', 'application/ecmascript');
+
+  xhr.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8');
+
+  xhr.send();
+  xhr.addEventListener("readystatechange", processRequest3, false);
+}
+
+function processRequest3(e) {
   if (xhr.readyState == 4 && xhr.status == 200) {
       responseBusStops = response;
     }
