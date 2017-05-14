@@ -1,0 +1,28 @@
+{
+  "manufacturer": "toyota",
+  "car": "auris",
+  "type": "1.33 3D/5D (6 M/T) (H/B) (99 HP)",
+  "urban": "173",
+  "rural": "121"
+},
+{
+  "manufacturer": "toyota",
+  "car": "auris",
+  "type": "1.6 3D/5D (6 M/T) (H/B) (132 HP)",
+  "urban": "198",
+  "rural": "126"
+},
+{
+  "manufacturer": "toyota",
+  "car": "auris",
+  "type": "1.6 3D/5D (6MMT) (H/B) (132 HP)",
+  "urban": "185",
+  "rural": "122"
+},
+{
+  "manufacturer": "toyota",
+  "car": "auris",
+  "type": "1.4 5D (6 M/T) (H/B) (90 HP)",
+  "urban": "152",
+  "rural": "114"
+}
