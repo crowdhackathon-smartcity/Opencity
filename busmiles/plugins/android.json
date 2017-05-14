@@ -12,7 +12,14 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.opencity.busmiles"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.opencity.busmiles"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.opencity.busmiles"
+        }
+    }
 }

@@ -64,7 +64,7 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
 })
 
 $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
-    $$('.chip-delete').on('click', function (e) {
+    $$('.chip-label').on('click', function (e) {
         e.preventDefault();
         var chip = $$(this).parents('.chip');
             myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
@@ -72,7 +72,7 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
         });
     });
 
-    $$('.chip-delete1').on('click', function (e) {
+    $$('.chip-delete').on('click', function (e) {
         e.preventDefault();
         var chip = $$(this).parents('.chip');
             myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
