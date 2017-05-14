@@ -48,13 +48,40 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     //myApp.alert('Here comes About page');
 })
 
-$$('.chip-delete').on('click', function (e) {
-    e.preventDefault();
-    var chip = $$(this).parents('.chip');
-    myApp.confirm('Do you want to delete this tiny demo Chip?', function () {
-        chip.remove();
+$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
+    // Following code will be executed for page with data-page attribute equal to "about"
+    //myApp.alert('Here comes About page');
+    var timerVar = setInterval(countTimer, 1000);
+    var totalSeconds = 0;
+    function countTimer() {
+        ++totalSeconds;
+       var hour = Math.floor(totalSeconds /3600);
+       var minute = Math.floor((totalSeconds - hour*3600)/60);
+       var seconds = totalSeconds - (hour*3600 + minute*60);
+
+       $$('.timer').innerHTML = hour + ":" + minute + ":" + seconds;
+    }   
+})
+
+$$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
+    $$('.chip-label').on('click', function (e) {
+        e.preventDefault();
+        var chip = $$(this).parents('.chip');
+            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
+            chip.remove();
+        });
+    });
+
+    $$('.chip-delete').on('click', function (e) {
+        e.preventDefault();
+        var chip = $$(this).parents('.chip');
+            myApp.confirm('You won a free ticket for Acropolis museum. Token ID: ADFSDFS3234234234234','buSmiles', function () {
+            chip.remove();
+        });
     });
 })
+
+
 
 
 $$(document).on('pageInit', '.page[data-page="exit"]', function (e) {
