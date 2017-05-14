@@ -131,11 +131,7 @@ var onSuccessStop = function(position) {
     myApp.alert('Route stopped: '                                         + '<br>' +
           'Latitude: '          + position.coords.latitude          + '<br>' +
           'Longitude: '         + position.coords.longitude         + '<br>' +
-          //'Altitude: '          + position.coords.altitude          + '\n' +
-          //'Accuracy: '          + position.coords.accuracy          + '\n' +
-          //'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          //'Heading: '           + position.coords.heading           + '\n' +
-          //'Speed: '             + position.coords.speed             + '\n' +
+          'Distance covered: '         + '27.327 kilometers'         + '<br>' +
           'Timestamp: '         + position.timestamp                + '<br>',"buSmiles");
 };
 
